@@ -9,6 +9,8 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  mode: "jit",
+
   theme: {
     extend: {},
   },

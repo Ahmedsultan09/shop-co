@@ -3,3 +3,18 @@
   height: 200px; */
   border: 1px solid red;
 }
+
+.cardImage {
+  border: 1px solid red;
+}
+
+.cardTitle {
+  border: 1px solid red;
+}
+
+.rating {
+  border: 1px solid red;
+}
+.productPrice {
+  border: 1px solid red;
+}
