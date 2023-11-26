@@ -6,7 +6,13 @@ function Index() {
   return (
     <div>
       <SocialMediaIcon linkedIn={true} />
-      <ProductCard rating={2} isDiscount={true} discount={50} oldPrice={122} />
+      <ProductCard
+        rating={2}
+        isDiscount={true}
+        discount={50}
+        oldPrice={122}
+        ratingQuantity={65}
+      />
     </div>
   );
 }

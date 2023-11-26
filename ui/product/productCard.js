@@ -13,6 +13,7 @@ function ProductCard({
   oldPrice,
   discount,
   rating,
+  ratingQuantity,
 }) {
   const percentage = discount / oldPrice;
 
@@ -42,6 +43,7 @@ function ProductCard({
         <div className={`${classes.rating} w-full h-1/3 text-yellow-500`}>
           {fullStars()}
           <span>{emptyStars()}</span>{" "}
+          <span className="text-black">({ratingQuantity})</span>
         </div>
 
         {isDiscount ? (
@@ -49,11 +51,21 @@ function ProductCard({
             className={`${classes.productPrice} w-full h-1/3 flex flex-row justify-center items-center`}
           >
             {" "}
-            <h3 className={`${classes.oldPrice} w-1/3 h-full font-bold `}>
+            <h3
+              className={`${classes.oldPrice} w-1/3 h-full font-bold text-center`}
+            >
               122$
             </h3>
-            <p className={`${classes.discount} w-1/3 h-full`}>{discount}</p>
-            <p className={`${classes.percentage} w-1/3 h-full`}>20%</p>
+            <p
+              className={`${classes.discount} w-1/3 h-full line-through opacity-80`}
+            >
+              {discount}
+            </p>
+            <p
+              className={`${classes.percentage} w-1/3 h-full text-red-600 text-sm text-center`}
+            >
+              20%
+            </p>
           </div>
         ) : (
           <h3 className={`${classes.productPrice} w-full h-1/3`}>
