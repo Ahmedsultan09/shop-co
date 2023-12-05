@@ -6,3 +6,19 @@
   font-family: "Noto Naskh Arabic", serif;
   font-family: "Vina Sans", sans-serif;
 } */
+
+.categories {
+  border: 1px solid red;
+}
+
+/* .search {
+  border: 1px solid red;
+} */
+
+.cart {
+  border: 1px solid red;
+}
+
+.dropDown {
+  border: 1px solid red;
+}
