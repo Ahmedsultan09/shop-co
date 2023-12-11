@@ -7,6 +7,7 @@ import SearchIcon from "../../ui/icons/search-icon";
 import CartIcon from "../../ui/icons/cart-icon";
 import UserIcon from "../../ui/icons/user";
 import Link from "next/link";
+import DropDownMenu from "./drop-down-menu";
 const vinaSans = vina({
   weight: "400",
   subsets: ["latin"],
@@ -18,7 +19,7 @@ const Noto = noto({
 function Nav() {
   return (
     <nav
-      className={`${classes.nav} w-screen h-16 p-3 flex items-center justify-around`}
+      className={`${classes.nav} w-screen h-16 p-3 flex items-center justify-around shadow-lg`}
     >
       <div className="w-1/2 flex flex-row items-center">
         {" "}
@@ -37,6 +38,8 @@ function Nav() {
           </div>
           <ul className="flex flex-row justify-center items-center gap-2">
             <Link href="/on-sale">On Sale</Link>
+            <DropDownMenu />
+
             <Link href="/new-arrivals">New Arrivals</Link>
             <Link href="/brands">Brands</Link>
           </ul>
