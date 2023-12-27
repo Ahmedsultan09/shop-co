@@ -17,6 +17,9 @@ const Noto = noto({
   subsets: ["latin"],
 });
 function Nav() {
+  function handleShopButton(e) {
+    e.classList.add(".a");
+  }
   return (
     <nav
       className={`${classes.nav} w-screen h-16 p-3 flex items-center justify-around shadow-lg`}
@@ -30,15 +33,15 @@ function Nav() {
           SHOP.CO
         </Link>
         <div
-          className={`${classes.categories} flex flex-row justify-start items-center w-5/6 h-full relative`}
+          className={`${classes.categories} flex flex-row justify-start items-center w-5/6 h-full relative ml-4`}
         >
-          <div>
-            Shop
-            <ArrowDown />
-          </div>
-          <ul className="flex flex-row justify-center items-center gap-2">
-            <Link href="/on-sale">On Sale</Link>
+          <ul className="flex flex-row justify-center items-center gap-4">
+            <li onClick={handleShopButton}>
+              Shop
+              <ArrowDown />
+            </li>
             <DropDownMenu />
+            <Link href="/on-sale">On Sale</Link>
 
             <Link href="/new-arrivals">New Arrivals</Link>
             <Link href="/brands">Brands</Link>

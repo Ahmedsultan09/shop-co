@@ -1,6 +1,6 @@
-.nav {
+/* .nav {
   border: 1px solid red;
-}
+} */
 
 /* .logo {
   font-family: "Noto Naskh Arabic", serif;
@@ -14,11 +14,11 @@
 /* .search {
   border: 1px solid red;
 } */
-
+/* 
 .cart {
   border: 1px solid red;
-}
+} */
 
 .dropDown {
-  border: 1px solid red;
+  z-index: 1;
 }

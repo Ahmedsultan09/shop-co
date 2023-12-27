@@ -5,13 +5,13 @@ import Link from "next/link";
 function DropDownMenu() {
   return (
     <div
-      className={`${classes.dropDown}  absolute flex flex-row flex-wrap w-1/2 left-0 top-11 box-content p-4 h-60 rounded-b-xl shadow-2xl z-10`}
+      className={`${classes.dropDown}  absolute flex flex-row flex-wrap w-3/4 left-0 top-11 box-content p-4 h-60 rounded-b-xl shadow-2xl  bg-white`}
     >
       <Link
-        href="/categories/music"
+        href="/categories/women's-fashion"
         className="w-1/2 h-6 p-4 flex justify-start items-center hover:bg-slate-100 rounded-md transition-all"
       >
-        Music
+        Women's Fashion
       </Link>
       <Link
         href="/categories/men's-fashion"
@@ -20,10 +20,10 @@ function DropDownMenu() {
         Men's Fashion
       </Link>
       <Link
-        href="/categories/women's-fashion"
+        href="/categories/music"
         className="w-1/2 h-6 p-4 flex justify-start items-center hover:bg-slate-100 rounded-md transition-all"
       >
-        Women's Fashion
+        Music
       </Link>
       <Link
         href="/categories/supermarket"
