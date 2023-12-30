@@ -1,17 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react";
-import classes from "./nav.module.css";
 import Link from "next/link";
 import Logo from "../../ui/icons/shop-logo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 
 function MobileMenu({ mobileMenuRef, handleMobileMenu }) {
   return (
     <>
       {" "}
       <aside
-        className={`${classes.mobileMenu} absolute  right-0 top-0 scroll-smooth overflow-auto w-2/3 h-full shadow-lg z-10 bg-white flex items-center justify-start flex-col box-border py-10 gap-5`}
+        className={`absolute  right-0 top-0 scroll-smooth overflow-auto w-2/3 h-full shadow-lg z-10 bg-white flex items-center justify-start flex-col box-border py-10 gap-5`}
         ref={mobileMenuRef}
       >
         <Logo />

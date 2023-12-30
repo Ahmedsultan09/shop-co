@@ -84,7 +84,7 @@ function Nav() {
       </div>
       <div className="lg:w-1/2 md:w-2/3 sm:w-3/4 vs:w-4/5 flex flex-row items-center ">
         <div
-          className={`${classes.search} w-3/4  h-full rounded-3xl p-2 flex flex-row items-center justify-around bg-stone-200`}
+          className={` w-3/4  h-full rounded-3xl p-2 flex flex-row items-center justify-around bg-stone-200`}
         >
           <SearchIcon className="w-2/12" />
           <input

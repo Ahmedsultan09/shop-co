@@ -1,11 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import classes from "./nav.module.css";
 import Link from "next/link";
 function DropDownMenu() {
   return (
     <div
-      className={`${classes.dropDown} absolute flex flex-row flex-wrap w-3/4 left-0 top-11 box-content p-4 h-60 rounded-b-xl shadow-2xl  bg-white  `}
+      className={` absolute flex flex-row flex-wrap w-3/4 left-0 top-11 box-content p-4 h-60 rounded-b-xl shadow-2xl  bg-white  `}
     >
       <Link
         href="/categories/women's-fashion"
