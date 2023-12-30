@@ -101,7 +101,7 @@ function Nav() {
           <span
             onClick={handleMobileMenu}
             ref={menuBarsRef}
-            className="lg:hidden md:flex sm:flex vs:flex"
+            className="lg:hidden md:flex sm:flex vs:flex cursor-pointer"
           >
             <MenuBarsIcon />
           </span>
