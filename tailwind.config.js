@@ -11,10 +11,17 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  mode: "jit",
-
   theme: {
-    extend: {},
+    screens: {
+      vs: "350px",
+      sm: "576px",
+      // => @media (min-width: 576px) { ... }
+
+      md: "960px",
+      // => @media (min-width: 960px) { ... }
+
+      lg: "1350px",
+      // => @media (min-width: 1440px) { ... }
+    },
   },
-  plugins: [],
 };

@@ -5,7 +5,7 @@ import Nav from "../layout/header/nav";
 
 function Index() {
   return (
-    <>
+    <div>
       {/* <SocialMediaIcon linkedIn={true} />
       <ProductCard
         rating={2}
@@ -15,7 +15,7 @@ function Index() {
         ratingQuantity={65}
   /> */}
       <Nav />
-    </>
+    </div>
   );
 }
 
