@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import classes from "./nav.module.css";
 import Logo from "../../ui/icons/shop-logo";
 import ArrowDown from "../../ui/icons/arrow-down";
 import SearchIcon from "../../ui/icons/search-icon";
