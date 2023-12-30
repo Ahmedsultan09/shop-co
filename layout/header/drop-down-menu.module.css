@@ -5,3 +5,7 @@
   border-right: 50px solid transparent;
   border-buttom: 100px solid blue;
 }
+
+.dropDown {
+  display: none;
+}

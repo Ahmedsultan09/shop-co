@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./nav.module.css";
 import { Vina_Sans as vina } from "next/font/google";
 import { Noto_Naskh_Arabic as noto } from "next/font/google";
@@ -17,9 +17,22 @@ const Noto = noto({
   subsets: ["latin"],
 });
 function Nav() {
-  function handleShopButton(e) {
-    e.classList.add(".a");
+  const [showMenu, setShowMenu] = useState(false);
+  let closeTimer;
+  function handleShopBtn() {
+    setShowMenu((prev) => !prev);
   }
+
+  function handleMouseEnter() {
+    clearTimeout(closeTimer);
+  }
+
+  function handleMouseLeave() {
+    closeTimer = setTimeout(() => {
+      setShowMenu(false);
+    }, 200);
+  }
+
   return (
     <nav
       className={`${classes.nav} w-screen h-16 p-3 flex items-center justify-around shadow-lg`}
@@ -28,19 +41,26 @@ function Nav() {
         {" "}
         <Link
           href="/"
-          className={`${classes.logo}  ${vinaSans.className} text-4xl w-1/6 flex items-center justify-center`}
+          className={`${classes.logo}  ${vinaSans.className} text-4xl w-1/6 flex items-center justify-center cursor-pointer`}
         >
           SHOP.CO
         </Link>
         <div
           className={`${classes.categories} flex flex-row justify-start items-center w-5/6 h-full relative ml-4`}
         >
-          <ul className="flex flex-row justify-center items-center gap-4">
-            <li onClick={handleShopButton}>
+          <ul className="flex flex-row justify-center items-center gap-4 cursor-pointer">
+            <li
+              className={`${classes.shopBtn}`}
+              onClick={handleShopBtn}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              tabIndex={0}
+            >
               Shop
               <ArrowDown />
+              {showMenu && <DropDownMenu />}{" "}
             </li>
-            <DropDownMenu />
+
             <Link href="/on-sale">On Sale</Link>
 
             <Link href="/new-arrivals">New Arrivals</Link>
