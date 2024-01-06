@@ -4,7 +4,7 @@ import Link from "next/link";
 function DropDownMenu() {
   return (
     <div
-      className={` absolute flex flex-row flex-wrap w-3/4 left-0 top-11 box-content p-4 h-60 rounded-b-xl shadow-2xl  bg-white  `}
+      className={` absolute flex flex-row flex-wrap w-3/4 left-0 top-11 box-content p-4 h-60 rounded-b-xl shadow-2xl  bg-white z-10 `}
     >
       <Link
         href="/categories/women's-fashion"

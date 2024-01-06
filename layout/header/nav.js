@@ -59,7 +59,7 @@ function Nav() {
 
   return (
     <nav
-      className={`w-auto h-16 p-3 box-border flex items-center justify-around shadow-lg md:text-sm sm:text-xs lg:text-lg`}
+      className={`w-auto h-16 p-3 box-border flex items-center justify-around shadow-lg md:text-sm sm:text-xs lg:text-lg z-10`}
     >
       <div className="lg:w-1/2 md:w-1/3 sm:w-1/4 vs:w-1/5 flex flex-row items-center">
         <Logo />
