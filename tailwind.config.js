@@ -11,6 +11,7 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
     screens: {
       vs: "350px",
@@ -22,6 +23,11 @@ module.exports = {
 
       lg: "1350px",
       // => @media (min-width: 1440px) { ... }
+    },
+    extend: {
+      backgroundColor: {
+        "light-grey": "#F2F0F1",
+      },
     },
   },
 };
