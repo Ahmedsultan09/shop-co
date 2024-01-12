@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import classes from "./ProductCard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import StarIcon from "../star-icon";
+import StarIcon from "../icons/star-icon";
 
 function ProductCard({
   imgSrc,
@@ -36,7 +36,7 @@ function ProductCard({
       className={`${classes.cardContainer} h-72 w-11/12 lg:w-1/5 md:w-1/3 sm:w-1/2 `}
     >
       <div className={`${classes.cardImage} w-full h-3/4 rounded-lg	`}>
-        <Image src={imgSrc} alt={imgAlt} />
+        <Image src={imgSrc} width={150} height={150} alt={imgAlt} />
       </div>
       <div className={`${classes.details} w-full h-1/4`}>
         <h3 className={`${classes.cardTitle} h-1/3 w-full	`}>{cardTitle}</h3>
