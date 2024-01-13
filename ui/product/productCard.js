@@ -8,14 +8,24 @@ function ProductCard({
   imgSrc,
   imgAlt,
   cardTitle,
-  productPrice,
+  newPrice,
   isDiscount,
   oldPrice,
   discount,
   rating,
   ratingQuantity,
 }) {
-  const percentage = discount / oldPrice;
+  let displayedPrice;
+  let discountedPrice;
+  let discountPercentage;
+  if (newPrice) {
+    displayedPrice = newPrice;
+    discountedPrice = oldPrice - newPrice;
+    discountPercentage = newPrice / oldPrice;
+  } else {
+    displayedPrice = oldPrice;
+  }
+  // const percentage = discountedPrice / oldPrice;
 
   function fullStars() {
     const stars = [];
@@ -36,17 +46,25 @@ function ProductCard({
       className={`${classes.cardContainer} h-72 w-11/12 lg:w-1/5 md:w-1/3 sm:w-1/2 `}
     >
       <div className={`${classes.cardImage} w-full h-3/4 rounded-lg	`}>
-        <Image src={imgSrc} width={150} height={150} alt={imgAlt} />
+        <Image
+          src={imgSrc}
+          width={150}
+          height={150}
+          alt={imgAlt}
+          className={`w-full h-full object-contain `}
+        />
       </div>
       <div className={`${classes.details} w-full h-1/4`}>
-        <h3 className={`${classes.cardTitle} h-1/3 w-full	`}>{cardTitle}</h3>
+        <h3 className={`${classes.cardTitle} h-1/3 w-full font-bold font-sans`}>
+          {cardTitle}
+        </h3>
         <div className={`${classes.rating} w-full h-1/3 text-yellow-500`}>
           {fullStars()}
           <span>{emptyStars()}</span>{" "}
           <span className="text-black">({ratingQuantity})</span>
         </div>
 
-        {isDiscount ? (
+        {newPrice ? (
           <div
             className={`${classes.productPrice} w-full h-1/3 flex flex-row justify-center items-center`}
           >
@@ -54,22 +72,22 @@ function ProductCard({
             <h3
               className={`${classes.oldPrice} w-1/3 h-full font-bold text-center`}
             >
-              122$
+              {displayedPrice}
             </h3>
             <p
               className={`${classes.discount} w-1/3 h-full line-through opacity-80`}
             >
-              {discount}
+              {discountedPrice}
             </p>
             <p
               className={`${classes.percentage} w-1/3 h-full text-red-600 text-sm text-center`}
             >
-              20%
+              {discountPercentage}
             </p>
           </div>
         ) : (
           <h3 className={`${classes.productPrice} w-full h-1/3`}>
-            {productPrice}
+            {displayedPrice}
           </h3>
         )}
       </div>

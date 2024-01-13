@@ -23,8 +23,9 @@ function TopSelling({ data }) {
                 imgSrc={product.imageCover}
                 imgAlt={product.title}
                 cardTitle={product.title}
-                productPrice={product.price}
+                oldPrice={product.price}
                 key={product.id}
+                newPrice={product.priceAfterDiscount}
               />
             );
           })}{" "}

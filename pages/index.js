@@ -23,9 +23,9 @@ export async function getStaticProps() {
   const products = await response.json();
   const data = products.data;
   const filtereData = data.filter((product) => {
-    return product.sold > 1000;
+    return product.sold > 2000;
   });
-  const trimmedArray = filtereData.slice(4, 8);
+  const trimmedArray = filtereData.slice(0, 4);
   return {
     props: {
       trimmedArray,
