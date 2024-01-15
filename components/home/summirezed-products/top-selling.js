@@ -26,6 +26,7 @@ function TopSelling({ data }) {
                 oldPrice={product.price}
                 key={product.id}
                 newPrice={product.priceAfterDiscount}
+                rating={product.ratingsAverage}
               />
             );
           })}{" "}
