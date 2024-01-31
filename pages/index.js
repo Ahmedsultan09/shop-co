@@ -6,6 +6,7 @@ import Hero from "../components/home/hero";
 import BarndsLabel from "../components/home/brands-label";
 import SumProducts from "../components/sum-products";
 import CategoriesCard from "../components/categories-card";
+import Reviews from "../components/home/testmonials/reviews";
 function Index({ data, categoriesData }) {
   const topSellingData = data
     .filter((product) => {
@@ -28,6 +29,7 @@ function Index({ data, categoriesData }) {
       <SumProducts data={topSellingData} title={"Top Selling"} />
       <SumProducts data={newArrivalsData} title={"New Arrivals"} />
       <CategoriesCard data={categoriesData} />
+      <Reviews />
     </div>
   );
 }
