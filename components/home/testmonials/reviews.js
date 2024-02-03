@@ -3,7 +3,7 @@ import CustomerCard from "./customer-card";
 
 function Reviews() {
   return (
-    <div>
+    <div className="w-full h-full p-10">
       <h1>OUR HAPPY CUSTOMERS</h1>
       <CustomerCard />
     </div>

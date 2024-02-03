@@ -8,9 +8,9 @@ function StarIcon({ full }) {
     <span>
       {" "}
       {full ? (
-        <FontAwesomeIcon icon={fullStar} />
+        <FontAwesomeIcon icon={fullStar} className="text-yellow-400" />
       ) : (
-        <FontAwesomeIcon icon={emptyStar} />
+        <FontAwesomeIcon icon={emptyStar} className="text-yellow-400" />
       )}
     </span>
   );
