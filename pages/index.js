@@ -1,54 +1,45 @@
 import React from "react";
-// import SocialMediaIcon from "../ui/social-media-icon";
-// import ProductCard from "../ui/product/productCard";
 import Nav from "../layout/header/nav";
 import Hero from "../components/home/hero";
 import BarndsLabel from "../components/home/brands-label";
 import SumProducts from "../components/sum-products";
 import CategoriesCard from "../components/categories-card";
 import Reviews from "../components/home/testmonials/reviews";
-function Index({ data, categoriesData }) {
-  const topSellingData = data
-    .filter((product) => {
-      return product.sold > 2000;
-    })
-    .slice(1, 5);
-  const newArrivalsData = data
-    .filter((product) => {
-      const productDate = new Date(product.createdAt);
-      return productDate;
-    })
-    .slice(8, 12)
-    .sort();
-
+import { getAllCategories, getNewArrivalsProducts } from "../helpers/api-util";
+import { getAllProducts } from "../helpers/api-util";
+import { getTopSellingProducts } from "../helpers/api-util";
+function Index({ categories, topSelling, newArrivals }) {
   return (
     <div>
       <Nav />
       <Hero />
       <BarndsLabel />
-      <SumProducts data={topSellingData} title={"Top Selling"} />
-      <SumProducts data={newArrivalsData} title={"New Arrivals"} />
-      <CategoriesCard data={categoriesData} />
+      <SumProducts data={topSelling} title={"Top Selling"} />
+      <SumProducts data={newArrivals} title={"New Arrivals"} />
+      <CategoriesCard data={categories} />
       <Reviews />
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const productsResponse = await fetch(
-    "https://ecommerce.routemisr.com/api/v1/products"
-  );
-  const products = await productsResponse.json();
-  const data = products.data;
-  const categoriesResponse = await fetch(
-    "https://ecommerce.routemisr.com/api/v1/categories"
-  );
-  const categories = await categoriesResponse.json();
-  const categoriesData = categories.data;
+  const [
+    productsData,
+    categoriesData,
+    topSellingProducts,
+    newArrivalsProducts,
+  ] = await Promise.all([
+    getAllProducts(),
+    getAllCategories(),
+    getTopSellingProducts(),
+    getNewArrivalsProducts(),
+  ]);
   return {
     props: {
-      data,
-      categoriesData,
+      prodcuts: productsData,
+      categories: categoriesData,
+      topSelling: topSellingProducts,
+      newArrivals: newArrivalsProducts,
     },
   };
 }
