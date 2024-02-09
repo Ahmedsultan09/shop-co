@@ -5,7 +5,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 function CustomerCard() {
   return (
-    <div className="lg:w-1/3 md:w-1/2 sm:w-full vs:w-full h-3/4 border border-solid border-red-700 overflow-hidden p-4">
+    <div className="w-[25rem] h-3/4 border border-solid border-red-700 overflow-hidden p-4">
       <div className="h-1/5 border border-solid border-red-700">
         <StarIcon full={true} />
         <StarIcon full={true} />

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomerCard from "./customer-card";
 import { Vina_Sans as vina } from "next/font/google";
 import Arrow from "../../../ui/icons/arrow";
@@ -10,24 +10,49 @@ const vinaSans = vina({
 
 function Reviews() {
   const revContainerRef = useRef(null);
-  let leftClickCount = 1;
-  let rightClickCount = 1;
+  let leftClickCount = 0;
+  let rightClickCount = 0;
   let translationValue = 0;
+  const [elementWidthVW, setElementWidthVW] = useState(0);
+  const [windowWidthVW, setWindowWidthVW] = useState(0);
+
+  useEffect(() => {
+    const updateElementWidth = () => {
+      const element = revContainerRef.current;
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const vwWidth = (rect.width / window.innerWidth) * 100;
+        setElementWidthVW(vwWidth);
+      }
+    };
+    const windowVW =
+      (window.innerWidth / document.documentElement.clientWidth) * 100;
+    setWindowWidthVW(windowVW);
+    window.addEventListener("resize", updateElementWidth);
+    updateElementWidth(); // Call initially to set the correct width
+
+    return () => {
+      window.removeEventListener("resize", updateElementWidth);
+    };
+  }, []);
+
+  console.log(elementWidthVW);
+  console.log(windowWidthVW);
 
   function handleRightArrow() {
     if (translationValue !== 0) {
-      translationValue += 10 * rightClickCount;
-      revContainerRef.current.style.transform = `translateX(${translationValue}%)`;
-      rightClickCount++;
-      leftClickCount = 1;
+      ++rightClickCount;
+      translationValue += elementWidthVW / 5;
+      revContainerRef.current.style.transform = `translateX(${translationValue}vw)`;
+      leftClickCount = 0;
     }
   }
   function handleLeftArrow() {
-    if (translationValue > -41) {
-      translationValue += -10 * leftClickCount;
-      revContainerRef.current.style.transform = `translateX(${translationValue}%)`;
-      leftClickCount++;
-      rightClickCount = 1;
+    if (translationValue > -windowWidthVW / 2) {
+      ++leftClickCount;
+      translationValue += -(elementWidthVW / 5);
+      revContainerRef.current.style.transform = `translateX(${translationValue}vw)`;
+      rightClickCount = 0;
     }
   }
   return (
@@ -48,7 +73,7 @@ function Reviews() {
       </div>
 
       <div
-        className="lg:w-[170%] md:w-[250%] sm:w-[300%] vs:w-[400%] h-full flex flex-row justify-center items-center gap-4"
+        className="lg:w-[150vw] sm:w-[220vw] vs:w-[410vw] h-full flex flex-row justify-center items-center gap-4 transition-transform"
         ref={revContainerRef}
       >
         <CustomerCard />
