@@ -10,8 +10,6 @@ const vinaSans = vina({
 
 function Reviews() {
   const revContainerRef = useRef(null);
-  let leftClickCount = 0;
-  let rightClickCount = 0;
   let translationValue = 0;
   const [elementWidthVW, setElementWidthVW] = useState(0);
   const [windowWidthVW, setWindowWidthVW] = useState(0);
@@ -29,40 +27,35 @@ function Reviews() {
       (window.innerWidth / document.documentElement.clientWidth) * 100;
     setWindowWidthVW(windowVW);
     window.addEventListener("resize", updateElementWidth);
-    updateElementWidth(); // Call initially to set the correct width
+    updateElementWidth();
 
     return () => {
       window.removeEventListener("resize", updateElementWidth);
     };
   }, []);
 
-  console.log(elementWidthVW);
-  console.log(windowWidthVW);
-
   function handleRightArrow() {
+    if (translationValue > windowWidthVW - elementWidthVW) {
+      translationValue -= elementWidthVW / 5;
+      revContainerRef.current.style.transform = `translateX(${translationValue}vw)`;
+    }
+  }
+
+  function handleLeftArrow() {
     if (translationValue !== 0) {
-      ++rightClickCount;
       translationValue += elementWidthVW / 5;
       revContainerRef.current.style.transform = `translateX(${translationValue}vw)`;
-      leftClickCount = 0;
     }
   }
-  function handleLeftArrow() {
-    if (translationValue > -windowWidthVW / 2) {
-      ++leftClickCount;
-      translationValue += -(elementWidthVW / 5);
-      revContainerRef.current.style.transform = `translateX(${translationValue}vw)`;
-      rightClickCount = 0;
-    }
-  }
+
   return (
-    <div className="w-full h-full p-10 overflow-hidden">
+    <div className="w-full h-full p-10 overflow-hidden relative">
       <h1
-        className={`${vinaSans.className} w-full flex items-center justify-center text-7xl font-bold py-7`}
+        className={`${vinaSans.className} w-full flex items-center justify-center text-7xl py-7`}
       >
         OUR HAPPY CUSTOMERS
       </h1>
-      <div className="w-full h-9 border border-solid border-red-700 flex items-center justify-end gap-2 text-2xl">
+      <div className="w-full h-9 flex items-center justify-end gap-2 text-2xl">
         {" "}
         <button onClick={handleLeftArrow}>
           <Arrow left={true} />
@@ -71,16 +64,17 @@ function Reviews() {
           <Arrow right={true} />
         </button>
       </div>
-
-      <div
-        className="lg:w-[150vw] sm:w-[220vw] vs:w-[410vw] h-full flex flex-row justify-center items-center gap-4 transition-transform"
-        ref={revContainerRef}
-      >
-        <CustomerCard />
-        <CustomerCard />
-        <CustomerCard />
-        <CustomerCard />
-        <CustomerCard />
+      <div className="w-screen h-full relative ">
+        <div
+          className="lg:w-[150vw] sm:w-[220vw] vs:w-[410vw] h-full flex flex-row justify-center items-center gap-4 transition-transform relative z-0"
+          ref={revContainerRef}
+        >
+          <CustomerCard name={"Ahmed Sultan"} />
+          <CustomerCard name={"Abdelrahman Elsayed"} />
+          <CustomerCard name={"Ahmed Yasser"} />
+          <CustomerCard name={"John Doe"} />
+          <CustomerCard name={"Mark"} />
+        </div>
       </div>
     </div>
   );
