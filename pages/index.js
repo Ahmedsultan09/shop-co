@@ -8,6 +8,7 @@ import Reviews from "../components/home/testmonials/reviews";
 import { getAllCategories, getNewArrivalsProducts } from "../helpers/api-util";
 import { getAllProducts } from "../helpers/api-util";
 import { getTopSellingProducts } from "../helpers/api-util";
+import NewsLetter from "../components/home/news-letter";
 function Index({ categories, topSelling, newArrivals }) {
   return (
     <div>
@@ -18,6 +19,7 @@ function Index({ categories, topSelling, newArrivals }) {
       <SumProducts data={newArrivals} title={"New Arrivals"} />
       <CategoriesCard data={categories} />
       <Reviews />
+      <NewsLetter />
     </div>
   );
 }

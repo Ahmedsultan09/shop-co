@@ -66,7 +66,7 @@ function Reviews() {
       </div>
       <div className="w-screen h-full relative ">
         <div
-          className="lg:w-[150vw] sm:w-[220vw] vs:w-[410vw] h-full flex flex-row justify-center items-center gap-4 transition-transform relative z-0"
+          className="lg:w-[150vw] sm:w-[220vw] vs:w-[410vw] h-full flex flex-row justify-around items-center  transition-transform relative z-0"
           ref={revContainerRef}
         >
           <CustomerCard name={"Ahmed Sultan"} />
