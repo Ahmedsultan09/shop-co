@@ -51,7 +51,7 @@ function Reviews() {
   return (
     <div className="w-full h-full p-10 overflow-hidden relative">
       <h1
-        className={`${vinaSans.className} w-full flex items-center justify-center text-7xl py-7`}
+        className={`${vinaSans.className} w-full flex items-center justify-center text-4xl py-7`}
       >
         OUR HAPPY CUSTOMERS
       </h1>
