@@ -10,6 +10,7 @@ import { getAllCategories, getNewArrivalsProducts } from "../helpers/api-util";
 import { getAllProducts } from "../helpers/api-util";
 import { getTopSellingProducts } from "../helpers/api-util";
 import NewsLetter from "../components/home/news-letter";
+import Footer from "../layout/footer/footer";
 function Index({ categories, topSelling, newArrivals }) {
   return (
     <div>
@@ -24,6 +25,7 @@ function Index({ categories, topSelling, newArrivals }) {
       <CategoriesCard data={categories} />
       <Reviews />
       <NewsLetter />
+      <Footer />
     </div>
   );
 }
