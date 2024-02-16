@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import Nav from "../layout/header/nav";
 import Hero from "../components/home/hero";
 import BarndsLabel from "../components/home/brands-label";
@@ -12,6 +13,9 @@ import NewsLetter from "../components/home/news-letter";
 function Index({ categories, topSelling, newArrivals }) {
   return (
     <div>
+      <Head>
+        <title>Shop.co</title>
+        <meta name="description" content="Discover a diverse selection of high-quality products for every need and occasion at Shop.co. From fashion essentials to home decor, electronics, beauty products, and more, we offer a wide range of meticulously curated items to elevate your lifestyle. Shop with confidence and convenience, knowing that each purchase is backed by our commitment to exceptional quality and customer satisfaction. Explore our extensive collection today and find exactly what you're looking for, all in one place." />      </Head>
       <Nav />
       <Hero />
       <BarndsLabel />
