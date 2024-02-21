@@ -3,20 +3,24 @@ import Head from "next/head";
 import Nav from "../layout/header/nav";
 import Hero from "../components/home/hero";
 import BarndsLabel from "../components/home/brands-label";
-import SumProducts from "../components/sum-products";
-import CategoriesCard from "../components/categories-card";
+import SumProducts from "../components/home/sum-products";
+import CategoriesCard from "../components/home/categories-card";
 import Reviews from "../components/home/testmonials/reviews";
 import { getAllCategories, getNewArrivalsProducts } from "../helpers/api-util";
 import { getAllProducts } from "../helpers/api-util";
 import { getTopSellingProducts } from "../helpers/api-util";
 import NewsLetter from "../components/home/news-letter";
 import Footer from "../layout/footer/footer";
-function Index({ categories, topSelling, newArrivals }) {
+function Index({ categories, topSelling, newArrivals, prodcuts }) {
   return (
     <div>
       <Head>
         <title>Shop.co</title>
-        <meta name="description" content="Discover a diverse selection of high-quality products for every need and occasion at Shop.co. From fashion essentials to home decor, electronics, beauty products, and more, we offer a wide range of meticulously curated items to elevate your lifestyle. Shop with confidence and convenience, knowing that each purchase is backed by our commitment to exceptional quality and customer satisfaction. Explore our extensive collection today and find exactly what you're looking for, all in one place." />      </Head>
+        <meta
+          name="description"
+          content="Discover a diverse selection of high-quality products for every need and occasion at Shop.co. From fashion essentials to home decor, electronics, beauty products, and more, we offer a wide range of meticulously curated items to elevate your lifestyle. Shop with confidence and convenience, knowing that each purchase is backed by our commitment to exceptional quality and customer satisfaction. Explore our extensive collection today and find exactly what you're looking for, all in one place."
+        />{" "}
+      </Head>
       <Nav />
       <Hero />
       <BarndsLabel />

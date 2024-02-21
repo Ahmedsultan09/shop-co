@@ -1,7 +1,7 @@
 import React from "react";
-import ProductCard from "../ui/product/productCard";
+import ProductCard from "../../ui/product/productCard";
 import { Vina_Sans as vina } from "next/font/google";
-import ViewAllBtn from "../ui/view-all-btn";
+import ViewAllBtn from "../../ui/view-all-btn";
 const vinaSans = vina({
   weight: "400",
   subsets: ["latin"],

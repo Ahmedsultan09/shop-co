@@ -6,7 +6,7 @@ import CartIcon from "../../ui/icons/cart-icon";
 import UserIcon from "../../ui/icons/user";
 import Link from "next/link";
 import MenuBarsIcon from "../../ui/icons/menu-bars";
-import MobileMenu from "./mobile-menu";
+import MobileNav from "./mobile-nav";
 import DropDownMenu from "./drop-down-menu";
 
 function Nav() {
@@ -108,7 +108,7 @@ function Nav() {
         </div>
       </div>
       <span className="lg:hidden">
-        {showMobileMenu && <MobileMenu mobileMenuRef={mobileMenuRef} />}
+        {showMobileMenu && <MobileNav mobileMenuRef={mobileMenuRef} />}
       </span>
     </nav>
   );

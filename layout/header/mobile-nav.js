@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "../../ui/icons/shop-logo";
 
-function MobileMenu({ mobileMenuRef, handleMobileMenu }) {
+function MobileNav({ mobileMenuRef, handleMobileMenu }) {
   return (
     <>
       {" "}
@@ -96,4 +96,4 @@ function MobileMenu({ mobileMenuRef, handleMobileMenu }) {
   );
 }
 
-export default MobileMenu;
+export default MobileNav;

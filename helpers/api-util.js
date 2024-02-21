@@ -40,3 +40,8 @@ export async function getNewArrivalsProducts() {
 
   return newArrivalsProducts;
 }
+
+export async function getSpecificProduct(id) {
+  const specificProduct = await fetchJson(`${API_BASE_URL}/products/${id}`);
+  return specificProduct.data;
+}
