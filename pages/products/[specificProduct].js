@@ -1,6 +1,5 @@
 import React from "react";
 import { getAllProducts, getSpecificProduct } from "../../helpers/api-util";
-import { Router } from "next/router";
 import ProductDetails from "../../components/specific-product/product-details";
 import Nav from "../../layout/header/nav";
 
