@@ -65,11 +65,40 @@ function ProductDetails({ data }) {
         </div>
       </aside>
       {/* Title and Details */}
-      <aside className="w-full lg:w-1/2 h-[30rem] border border-red-700 border-solid flex flex-col justify-around items-center">
-        <h1>{data.title}</h1>
-        <div>
-          {" "}
-          {fullStars()} <span>{emptyStars()}</span>{" "}
+      <aside className="w-full lg:w-1/2 h-[30rem] border border-red-700 border-solid flex flex-col justify-start items-center">
+        <div className="w-full h-1/2">
+          <h1 className="text-3xl flex items-center font-bold h-2/6  border-red-700 border-solid ">
+            {data.title}
+          </h1>
+          <div className="w-full h-1/6 border border-red-700 border-solid ">
+            {" "}
+            {fullStars()} <span>{emptyStars()}</span>{" "}
+          </div>
+          <div className="w-full h-1/6 border text-2xl font-semibold border-red-700 border-solid">
+            {data.price}$
+          </div>
+          <p className="w-full h-2/6 border border-red-700 border-solid opacity-70">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            bibendum, lacus quis pharetra ultricies, lacus enim mollis lacus, at
+            molestie urna lorem at turpis.
+          </p>
+        </div>
+        <div className="w-full h-1/2">
+          <div className="w-full h-1/6">
+            <Image
+              src={data.brand.image}
+              width={150}
+              height={150}
+              alt={data.brand.name}
+              className={`w-full h-full object-contain bg-none`}
+            />
+          </div>
+          <div className="w-full h-2/6 border border-solid border-red-700">
+            <h3 className="opacity-70 w-full h-1/4 border border-solid border-red-700 flex items-center">
+              Choose Size
+            </h3>
+            <div className="w-full h-3/4 border border-solid border-red-700"></div>
+          </div>
         </div>
       </aside>
     </section>
