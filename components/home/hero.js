@@ -9,13 +9,19 @@ function Hero() {
     <header className="h-[calc(100vh-64px)] w-full overflow-hidden  flex lg:flex-row-reverse md:flex-col sm:flex-col vs:flex-col z-30 ">
       {/* SEPARETOR ====== SEPARETOR =========*/}
       <div className="lg:w-1/2 md:w-full sm:w-full vs:w-full lg:h-full md:h-1/2 sm:h-1/2 vs:h-1/2 relative lg:block md:hidden sm:hidden vs:hidden">
-        <Image src={heroImageTwo} width={800} height={400} alt="text"></Image>
+        <Image
+          src={heroImageTwo}
+          width={800}
+          height={400}
+          alt="text"
+          priority
+        ></Image>
       </div>
       <div className="lg:w-1/2 md:w-full sm:w-full vs:w-full lg:h-full md:h-1/2 sm:h-1/2 vs:h-1/2 relative lg:hidden md:block sm:block vs:hidden">
-        <Image src={heroImageOne} fill={true} alt="text"></Image>
+        <Image src={heroImageOne} fill={true} alt="text" priority></Image>
       </div>
       <div className="lg:w-1/2 md:w-full sm:w-full vs:w-full lg:h-full md:h-1/2 sm:h-1/2 vs:h-1/2 relative lg:hidden md:hidden sm:hidden vs:block">
-        <Image src={heroImageThree} fill={true} alt="text"></Image>
+        <Image src={heroImageThree} fill={true} alt="text" priority></Image>
       </div>
       {/* SEPARETOR ====== SEPARETOR =========*/}
 
