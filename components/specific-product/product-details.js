@@ -97,7 +97,20 @@ function ProductDetails({ data }) {
             <h3 className="opacity-70 w-full h-1/4 border border-solid border-red-700 flex items-center">
               Choose Size
             </h3>
-            <div className="w-full h-3/4 border border-solid border-red-700"></div>
+            <div className="w-full h-3/4 border border-solid border-red-700 flex flex-row justify-start gap-1 px-2">
+              <div className="w-24 h-full rounded-2xl flex items-center justify-center bg-gray-100 text-black cursor-pointer">
+                Small
+              </div>
+              <div className="w-24 h-full rounded-2xl flex items-center justify-center bg-gray-100 text-black cursor-pointer">
+                Medium
+              </div>
+              <div className="w-24 h-full rounded-2xl flex items-center justify-center bg-gray-100 text-black cursor-pointer">
+                Large
+              </div>
+              <div className="w-24 h-full rounded-2xl flex items-center justify-center bg-gray-100 text-black cursor-pointer">
+                X-Large
+              </div>
+            </div>
           </div>
         </div>
       </aside>
