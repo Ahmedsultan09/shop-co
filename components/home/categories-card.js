@@ -27,7 +27,6 @@ function CategoriesCard({ data }) {
               src={data[0].image}
               width={150}
               height={150}
-              layout="responsive"
               className={`w-full h-full object-cover border border-gray-300 border-solid rounded-lg bg-none`}
               alt="category 1"
             />
@@ -44,7 +43,6 @@ function CategoriesCard({ data }) {
               src={data[1].image}
               width={150}
               height={150}
-              layout="responsive"
               className={`w-full h-full object-cover border border-gray-300 border-solid rounded-lg bg-none`}
               alt="category 1"
             />
@@ -60,7 +58,6 @@ function CategoriesCard({ data }) {
               src={data[5].image}
               width={150}
               height={150}
-              layout="responsive"
               className={`w-full h-full object-cover border border-gray-300 border-solid rounded-lg bg-none`}
               alt="category 1"
             />
@@ -76,7 +73,6 @@ function CategoriesCard({ data }) {
               src={data[4].image}
               width={150}
               height={150}
-              layout="responsive"
               className={`w-full h-full object-cover border border-gray-300 border-solid rounded-lg bg-none`}
               alt="category 1"
             />

@@ -98,10 +98,10 @@ function ProductDetails({ data }) {
               Choose Size
             </h3>
             <div className="w-full h-3/4 border border-solid border-red-700">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
         </div>
