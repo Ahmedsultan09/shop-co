@@ -97,7 +97,12 @@ function ProductDetails({ data }) {
             <h3 className="opacity-70 w-full h-1/4 border border-solid border-red-700 flex items-center">
               Choose Size
             </h3>
-            <div className="w-full h-3/4 border border-solid border-red-700"></div>
+            <div className="w-full h-3/4 border border-solid border-red-700">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
           </div>
         </div>
       </aside>
