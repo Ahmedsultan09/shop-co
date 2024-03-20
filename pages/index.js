@@ -11,6 +11,8 @@ import { getAllProducts } from "../helpers/api-util";
 import { getTopSellingProducts } from "../helpers/api-util";
 import NewsLetter from "../components/home/news-letter";
 import Footer from "../layout/footer/footer";
+import { Provider } from "react-redux";
+import store from "../store";
 function Index({ categories, topSelling, newArrivals, prodcuts }) {
   return (
     <div>
@@ -21,6 +23,7 @@ function Index({ categories, topSelling, newArrivals, prodcuts }) {
           content="Discover a diverse selection of high-quality products for every need and occasion at Shop.co. From fashion essentials to home decor, electronics, beauty products, and more, we offer a wide range of meticulously curated items to elevate your lifestyle. Shop with confidence and convenience, knowing that each purchase is backed by our commitment to exceptional quality and customer satisfaction. Explore our extensive collection today and find exactly what you're looking for, all in one place."
         />{" "}
       </Head>
+
       <Nav />
       <Hero />
       <BarndsLabel />
