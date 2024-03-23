@@ -1,22 +1,33 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import StarIcon from "../../ui/icons/star-icon";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { actions } from "../../store/cartSlice";
 
 function ProductDetails({ data }) {
   let [orderedQuantity, setOrderedQuantity] = useState(1);
-  let quantity = useSelector((state) => state.cart.quantity);
+  let cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
   const description = data.description;
   const lines = description.split("\n").slice(0, 3);
-
-  let handleQuantity = (method) => {
+  const actualRating = Math.floor(data.ratingsAverage);
+  let payload = {
+    name: data.title,
+    id: data.id,
+    price: data.price,
+    image: data.imageCover,
+    quantity: orderedQuantity,
+  };
+  function handleQuantity(method) {
     if (method === "add") {
       setOrderedQuantity((prev) => prev + 1);
     } else if (method === "less" && orderedQuantity != 1) {
       setOrderedQuantity((prev) => prev - 1);
     }
-  };
-  let actualRating = Math.floor(data.ratingsAverage);
+  }
+  function handleAddToCart() {
+    dispatch(actions.addToCart(payload));
+  }
   function fullStars() {
     const stars = [];
     for (let i = 0; i < actualRating; i++) {
@@ -31,6 +42,8 @@ function ProductDetails({ data }) {
     }
     return stars;
   }
+  console.log(cartItems);
+
   return (
     <section className="py-5 px-10 flex flex-col lg:flex-row gap-2">
       {/* Images */}
@@ -128,13 +141,13 @@ function ProductDetails({ data }) {
               <button onClick={() => handleQuantity("add")}>+</button>
             </div>
             <div className="w-2/3 h-1/2 rounded-3xl bg-black text-white flex items-center justify-center text-sm lg:text-2xl font-bold">
-              <button className="w-full h-full">Add to Cart</button>
+              <button className="w-full h-full" onClick={handleAddToCart}>
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
       </aside>
-
-      <div>{quantity}</div>
     </section>
   );
 }

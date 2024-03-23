@@ -5,8 +5,6 @@ import Nav from "../../layout/header/nav";
 import Head from "next/head";
 
 function SpecificProduct({ specificProduct }) {
-  console.log(specificProduct);
-
   return (
     <>
       <Head>
