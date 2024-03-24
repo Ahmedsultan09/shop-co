@@ -11,9 +11,8 @@ import { getAllProducts } from "../helpers/api-util";
 import { getTopSellingProducts } from "../helpers/api-util";
 import NewsLetter from "../components/home/news-letter";
 import Footer from "../layout/footer/footer";
-import { Provider } from "react-redux";
-import store from "../store";
-function Index({ categories, topSelling, newArrivals, prodcuts }) {
+
+function Index({ categories, topSelling, newArrivals }) {
   return (
     <div>
       <Head>

@@ -27,6 +27,7 @@ function ProductDetails({ data }) {
   }
   function handleAddToCart() {
     dispatch(actions.addToCart(payload));
+    setOrderedQuantity(1);
   }
   function fullStars() {
     const stars = [];
