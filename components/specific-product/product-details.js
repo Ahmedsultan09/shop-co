@@ -4,6 +4,9 @@ import StarIcon from "../../ui/icons/star-icon";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../store/cartSlice";
 import Reviews from "../home/testmonials/reviews";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NewsLetter from "../home/news-letter";
+import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Vina_Sans as vina } from "next/font/google";
 const vinaSans = vina({
   weight: "400",
@@ -143,9 +146,16 @@ function ProductDetails({ data, similarProducts }) {
             </div>
             <div className="w-full h-3/6 flex justify-center items-center gap-2">
               <div className="w-1/3 h-1/2 rounded-3xl bg-gray-100 flex justify-around items-center text-xs lg:text-2xl font-bold">
-                <button onClick={() => handleQuantity("less")}>-</button>
-                <span>{orderedQuantity}</span>
-                <button onClick={() => handleQuantity("add")}>+</button>
+                <button
+                  onClick={() => handleQuantity("less")}
+                  className="w-1/5"
+                >
+                  <FontAwesomeIcon icon={faMinus} />
+                </button>
+                <span className="w-3/5 text-center">{orderedQuantity}</span>
+                <button onClick={() => handleQuantity("add")} className="w-1/5">
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
               </div>
               <div className="w-2/3 h-1/2 rounded-3xl bg-black text-white flex items-center justify-center text-sm lg:text-2xl font-bold">
                 <button className="w-full h-full" onClick={handleAddToCart}>
@@ -165,6 +175,9 @@ function ProductDetails({ data, similarProducts }) {
         >
           You might also like
         </h1>
+      </section>
+      <section>
+        <NewsLetter />
       </section>
     </main>
   );
