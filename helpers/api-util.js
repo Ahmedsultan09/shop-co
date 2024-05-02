@@ -45,3 +45,13 @@ export async function getSpecificProduct(id) {
   const specificProduct = await fetchJson(`${API_BASE_URL}/products/${id}`);
   return specificProduct.data;
 }
+
+export async function getSimilarProducts(brandId) {
+  const allProducts = await getAllProducts();
+  const similarProducts = allProducts
+    .filter((product) => {
+      return product.brand._id === brandId;
+    })
+    .slice(0, 4);
+  return similarProducts;
+}
